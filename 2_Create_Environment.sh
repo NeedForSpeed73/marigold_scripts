@@ -25,6 +25,7 @@ cd Marigold
 # Create Environment
 printf %"s\n" "" "* Creating Environment marigold" ""
 mamba env create -n marigold --file environment.yaml
+source activate base
 conda activate marigold
 
 printf %"s\n" "" "* Installing FFMPEG" ""
