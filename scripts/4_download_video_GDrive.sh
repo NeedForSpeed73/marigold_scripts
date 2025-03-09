@@ -3,7 +3,7 @@
 
 DIR=$HOME/Marigold/workspace
 
-VIDEO_ID_FILE=$HOME/Marigold/workspace/video.DIR
+VIDEO_ID_FILE=$DIR/video.id
 
 if [ "$#" -gt 0 ]; then
 	printf %"s\n" "Usage: 4_download_video_GDrive.sh."
@@ -18,3 +18,4 @@ else
 		VIDEO_ID=$(<$VIDEO_ID_FILE)
 	fi
 	gdown --id $VIDEO_ID
+fi
