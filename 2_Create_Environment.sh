@@ -25,8 +25,10 @@ cd Marigold
 # Create Environment
 printf %"s\n" "" "* Creating Environment marigold" ""
 mamba env create -n marigold --file environment.yaml
-conda activate base
+. $CONDA_BASE/etc/profile.d/conda.sh
+conda info --envs
 conda activate marigold
+conda info --envs #check if env is activated
 
 printf %"s\n" "" "* Installing FFMPEG" ""
 mamba install ffmpeg
