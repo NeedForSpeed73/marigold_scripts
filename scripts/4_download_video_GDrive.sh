@@ -13,7 +13,6 @@ else
 		VIDEO_ID="$(echo "$VIDEO_LINK | awk -F "/" '{print $6}')"
 		touch $VIDEO_ID_FILE
 		echo $VIDEO_ID > $VIDEO_ID_FILE
-		printf %"s\n"
 	else
 		VIDEO_ID=$(<$VIDEO_ID_FILE)
 	fi
