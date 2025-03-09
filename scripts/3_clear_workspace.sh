@@ -8,6 +8,7 @@ if [ -d "$DIR" ]; then
 else
 	printf %"s\n" "$DIR  does not exist."
 	printf %"s\n" "* Creating $DIR."
+	mkdir $DIR
 	mkdir $DIR/input
 	mkdir $DIR/output
 fi
