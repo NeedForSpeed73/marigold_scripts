@@ -9,7 +9,7 @@ if [ -d "$DIR" ]; then
 else
 	printf %"s\n" "$DIR  does not exist."
 	printf %"s\n" "* Creating $DIR."
-	mkdir $HOME/workplace
-	mkdir $HOME/workplace/input
-	mkdir $HOME/workplace/output
+	mkdir $DIR/workplace
+	mkdir $DIR/workplace/input
+	mkdir $DIR/workplace/output
 fi
