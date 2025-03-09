@@ -9,7 +9,7 @@ printf %"s\n" "" "* Installing Miniforge3-"$(uname)-$(uname -m) ""
 bash "Miniforge3-"$(uname)-$(uname -m)".sh"  -b
 
 printf %"s\n" "" "* Activating Miniforge3"
-source "${HOME}/conda/etc/profile.d/conda.sh"
+source "${HOME}/miniforge3/etc/profile.d/conda.sh"
 
 printf %"s\n" "" "* Cleaning Up" ""
 rm "Miniforge3-"$(uname)-$(uname -m)".sh"
