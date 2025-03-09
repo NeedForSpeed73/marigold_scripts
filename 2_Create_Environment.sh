@@ -22,6 +22,8 @@ printf %"s\n" "" "* Downloading Marigold (https://github.com/prs-eth/Marigold.gi
 git clone https://github.com/prs-eth/Marigold.git
 cd Marigold
 
+CONDA_BASE=$(conda info --base)
+
 # Create Environment
 printf %"s\n" "" "* Creating Environment marigold" ""
 mamba env create -n marigold --file environment.yaml
