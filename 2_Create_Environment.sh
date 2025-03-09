@@ -4,11 +4,8 @@
 #Install gdrive e ffmpeg
 printf %"s\n" "" "* Installing gdrive (https://github.com/glotlabs/gdrive)" ""
 wget https://github.com/glotlabs/gdrive/releases/download/3.9.1/gdrive_linux-x64.tar.gz
-tar -xzf gdrive_linux_x64.tar.gz
-rm gdrive_linux_x64.tar.gz
-
-printf %"s\n" "" "* Installing FFMPEG (package ffmpeg)" ""
-sudo apt -y install ffmpeg
+tar -xzf gdrive_linux-x64.tar.gz
+rm gdrive_linux-x64.tar.gz
 
 #Install Nvidia Proprietary Drivers
 #read -p "Do you want to install Nvidia Proprietary Drivers? (Y/N)" -r
@@ -30,7 +27,9 @@ printf %"s\n" "" "* Creating Environment marigold" ""
 mamba env create -n marigold --file environment.yaml
 conda activate marigold
 
+printf %"s\n" "" "* Installing FFMPEG" ""
+mamba install ffmpeg
+
 # Clean packagers
 printf %"s\n" "" "* Cleaning Up" ""
-sudo apt-get -y clean
 conda clean -y -a
