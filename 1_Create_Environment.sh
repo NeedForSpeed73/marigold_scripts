@@ -30,9 +30,13 @@ cd Marigold
 
 # Create Environment
 printf %"s\n" "" "* Creating Environment marigold" ""
-python -m venv venv/marigold
-source venv/marigold/bin/activate
-pip install -r requirements.txt
+wget -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3-$(uname)-$(uname -m).sh -b -p "${HOME}/conda"
+. "${HOME}/conda/etc/profile.d/conda.sh"
+# For mamba support also run the following command
+. "${HOME}/conda/etc/profile.d/mamba.sh"
+mamba env create -n marigold --file environment.yaml
+conda activate marigold
 
 printf %"s\n" "" "* Installing FFMPEG" ""
 sudo apt install -y ffmpeg
