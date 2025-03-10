@@ -38,8 +38,8 @@ cd Marigold
 
 # Create Environment
 printf %"s\n" "" "* Creating Environment marigold" ""
-python -m venv venv/marigold
-source venv/marigold/bin/activate
+python3 -m venv venv/marigold
+. venv/marigold/bin/activate
 pip install -r requirements.txt
 
 # Clean packagers
