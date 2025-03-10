@@ -37,5 +37,5 @@ sudo apt -y clean
 
 # Banner Message
 printf %"s\n" "" "***************************************************************"
-printf %"s\n" "* NOW EXECUTE 'source venv/marigold/bin/activate' TO ACTIVATE ENV *"
+printf %"s\n" "* NOW EXECUTE 'source Marigold/venv/marigold/bin/activate' TO ACTIVATE ENV *"
 printf %"s\n" "***************************************************************" ""
