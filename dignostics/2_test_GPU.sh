@@ -1,13 +1,7 @@
 #!/bin/bash
 
-function val_from_python {
-        pythonval="$(python3 - <<END
-import tensorflow as tf
-print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')))
-
+<<END
+import torch
+if torch.cuda.is_available()
+        print("Using:", torch.cuda.get_device_name(torch.cuda.current_device()))
 END
-)"
-
-        printf %"s\n" "$pythonval"
-}
-val_from_python
