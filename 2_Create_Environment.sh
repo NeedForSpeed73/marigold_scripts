@@ -1,12 +1,6 @@
 #!/bin/bash
 #
 
-#Install gdrive e ffmpeg
-printf %"s\n" "" "* Installing gdrive (https://github.com/prasmussen/gdrive)" ""
-wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_386.tar.gz
-tar -xzf gdrive_2.1.1_linux_386.tar.gz
-rm gdrive_2.1.1_linux_386.tar.gz
-
 #Install Nvidia Proprietary Drivers
 #read -p "Do you want to install Nvidia Proprietary Drivers? (Y/N)" -r
 #if [[ $REPLY =~ ^[Yy]$ ]]; then
