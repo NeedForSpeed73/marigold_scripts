@@ -1,17 +1,6 @@
 #!/bin/bash
 #
 
-#Install Nvidia Proprietary Drivers
-#read -p "Do you want to install Nvidia Proprietary Drivers? (Y/N)" -r
-#if [[ $REPLY =~ ^[Yy]$ ]]; then
-#	printf %"s\n" "" "* Installing Nvidia Proprietary Drivers" ""
-#	read -e -p "Enter Drivers File Google Drive ID: " DRIVERS_ID
-#	./gdrive download $DRIVERS_ID
-#	DRIVERS_FILENAME=`ls NVIDIA-Linux*`
-#	sudo sh ./$DRIVERS_FILENAME
-#	rm $DRIVERS_FILENAME
-#fi
-
 #Install CUDA Support
 printf %"s\n" "" "* Downloading and installing CUDA for Ubuntu 22.04 x86_64" ""
 IS_WSL="$(cat /proc/sys/fs/binfmt_misc/WSLInterop | grep enabled)"
@@ -23,6 +12,7 @@ fi
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt update
 sudo apt -y install cuda-toolkit-12-8
+rm cuda-keyring_1.1-1_all.deb
 
 # Install ffmpeg
 printf %"s\n" "" "* Installing FFMPEG" ""
