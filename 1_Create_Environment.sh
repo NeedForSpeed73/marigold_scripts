@@ -12,11 +12,6 @@
 #	rm $DRIVERS_FILENAME
 #fi
 
-# Install ffmpeg
-printf %"s\n" "" "* Installing FFMPEG" ""
-sudo apt update
-sudo apt install -y ffmpeg
-
 #Install CUDA Support
 printf %"s\n" "" "* Downloading and installing CUDA for Ubuntu 22.04 x86_64" ""
 IS_WSL="$(cat /proc/sys/fs/binfmt_misc/WSLInterop | grep enabled)"
@@ -26,24 +21,27 @@ else
 	wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
 fi
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
-sudo apt-get update
-sudo apt-get -y install cuda-toolkit-12-8
+sudo apt update
+sudo apt -y install cuda-toolkit-12-8
+
+# Install ffmpeg
+printf %"s\n" "" "* Installing FFMPEG" ""
+sudo apt install -y ffmpeg
+
+#Install Python Virtual Environment
+printf %"s\n" "" "* Installing Python3-venv" ""
+sudo apt install -y python3-venv
 
 printf %"s\n" "" "* Downloading Marigold (https://github.com/prs-eth/Marigold.git) and installing requirements-cuda" ""
 git clone https://github.com/prs-eth/Marigold.git
 cd Marigold
 
-CONDA_BASE=$(conda info --base)
-. $CONDA_BASE/etc/profile.d/conda.sh
-
 # Create Environment
 printf %"s\n" "" "* Creating Environment marigold" ""
-conda create -y -n marigold -c main --file environment.yaml
-conda info --envs
-conda activate marigold
-conda info --envs
+python -m venv venv/marigold
+source venv/marigold/bin/activate
+pip install -r requirements.txt
 
 # Clean packagers
 printf %"s\n" "" "* Cleaning Up" ""
-sudo apt-get -y clean
-conda clean -y -a
+sudo apt -y clean
