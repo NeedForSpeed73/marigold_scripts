@@ -14,6 +14,7 @@
 
 # Install ffmpeg
 printf %"s\n" "" "* Installing FFMPEG" ""
+sudo apt update
 sudo apt install -y ffmpeg
 
 #Install CUDA Support
@@ -32,11 +33,17 @@ printf %"s\n" "" "* Downloading Marigold (https://github.com/prs-eth/Marigold.gi
 git clone https://github.com/prs-eth/Marigold.git
 cd Marigold
 
+CONDA_BASE=$(conda info --base)
+. $CONDA_BASE/etc/profile.d/conda.sh
+
 # Create Environment
 printf %"s\n" "" "* Creating Environment marigold" ""
-mamba env create -n marigold --file environment.yaml
+conda create -y -n marigold -c main --file environment.yaml
+conda info --envs
 conda activate marigold
+conda info --envs
 
 # Clean packagers
 printf %"s\n" "" "* Cleaning Up" ""
 sudo apt-get -y clean
+conda clean -y -a
