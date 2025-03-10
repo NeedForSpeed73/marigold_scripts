@@ -39,9 +39,13 @@ cd Marigold
 # Create Environment
 printf %"s\n" "" "* Creating Environment marigold" ""
 python3 -m venv venv/marigold
-. venv/marigold/bin/activate
 pip install -r requirements.txt
 
 # Clean packagers
 printf %"s\n" "" "* Cleaning Up" ""
 sudo apt -y clean
+
+# Banner Message
+printf %"s\n" "" "***************************************************************"
+printf %"s\n" "* NOW EXECUTE 'source venv/marigold/bin/activate' TO ACTIVATE ENV *"
+printf %"s\n" "***************************************************************" ""
