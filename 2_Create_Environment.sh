@@ -27,8 +27,9 @@ conda activate marigold
 conda info --envs #check if env is activated
 
 printf %"s\n" "" "* Installing FFMPEG" ""
-mamba install -y ffmpeg
+sudo apt install -y ffmpeg
 
 # Clean packagers
 printf %"s\n" "" "* Cleaning Up" ""
+sudo apt-get -y clean
 conda clean -y -a
