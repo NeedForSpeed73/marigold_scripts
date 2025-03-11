@@ -3,11 +3,9 @@
 
 DIR=$HOME/Marigold/workspace
 
-VIDEO_FILE=$1
-
 if [ "$#" -ne 1 ]; then
 	printf %"s\n" "Usage: 8_upload_video_SFTP.sh. <video file> in folder Public"
 else
-	out_file=$DIR/$VIDEO_FILE
-	sftp -P 24 emilio@emiliofederici.ddns.net <<EOF put $out_file share/CACHEDEV1_DATA/Public EOF
+#	sftp -P 24 emilio@emiliofederici.ddns.net <<< put $out_file /share/CACHEDEV1_DATA/Public
+	scp -P 24 $DIR/output/$1 emilio@emiliofederici.ddns.net:/share/CACHEDEV1_DATA/Public 
 fi
