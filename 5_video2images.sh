@@ -4,7 +4,7 @@
 DIR=$HOME/Marigold/workspace
 
 if [ "$#" -ne 1 ]; then
-	printf %"s\n" "Usage: 5_video2images.sh <video.mp4>"
+	printf %"s\n" "Usage: 5_video2images.sh <video path>"
 else
 	if ! [ -f $1 ]; then
 		printf %"s\n" "File $1 not found"
