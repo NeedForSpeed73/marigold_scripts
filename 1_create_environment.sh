@@ -6,7 +6,7 @@ IS_WSL="$(cat /proc/sys/fs/binfmt_misc/WSLInterop | grep enabled)"
 #Install NVIDIA Drivers if not WSL
 if ! [ $IS_WSL = "enabled" ]; then
 	printf %"s\n" "" "* Downloading and installing NVIDIA Drivers for Ubuntu 22.04 x86_64" ""
-	sudo ubuntu-drivers install
+	sudo ubuntu-drivers install --gpgpu
 fi
 
 #Install CUDA Support
