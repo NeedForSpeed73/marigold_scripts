@@ -18,23 +18,23 @@ rm cuda-keyring_1.1-1_all.deb
 printf %"s\n" "" "* Installing FFMPEG" ""
 sudo apt install -y ffmpeg
 
-#Install Python Virtual Environment
-printf %"s\n" "" "* Installing Python3-venv" ""
-sudo apt install -y python3-venv
+# Clean packagers
+printf %"s\n" "" "* Cleaning Up" ""
+sudo apt -y clean
 
 printf %"s\n" "" "* Downloading Marigold (https://github.com/prs-eth/Marigold.git) and installing requirements-cuda" ""
 git clone https://github.com/prs-eth/Marigold.git
 cd Marigold
 
-# Clean packagers
-printf %"s\n" "" "* Cleaning Up" ""
-sudo apt -y clean
-
-# Create Environment
-printf %"s\n" "" "* Creating Environment marigold" ""
-python3 -m venv venv/marigold
+# Install Miniforge3
+printf %"s\n" "" "* Downloading and installing Miniforge-3-$(uname)-$(uname -m).sh"
+wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3.sh -b -p "${HOME}/Marigold/conda"
+rm Miniforge3.sh
 
 # Banner Message
 printf %"s\n" "" "***************************************************************"
-printf %"s\n" "* NOW EXECUTE 'source Marigold/venv/marigold/bin/activate' TO ACTIVATE ENV *"
+printf %"s\n" "* NOW EXECUTE 'source Marigold/conda/etc/profile.d/conda.sh'"
+printf %"s\n" "* NOW EXECUTE 'source Marigold/conda/etc/profile.d/mamba.sh'"
+printf %"s\n" "* NOW EXECUTE 'conda activate'"
 printf %"s\n" "***************************************************************" ""
