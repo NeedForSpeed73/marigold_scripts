@@ -1,13 +1,11 @@
 #!/bin/bash
 #
 
-#Install CUDA Support
+#Install CUDA Support for WSL
 IS_WSL="$(cat /proc/sys/fs/binfmt_misc/WSLInterop | grep enabled)"
-printf %"s\n" "" "* Downloading and installing CUDA for Ubuntu 22.04 x86_64" ""
+printf %"s\n" "" "* Downloading and installing CUDA for Ubuntu WSL" ""
 if [ $IS_WSL = "enabled" ]; then
 	wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb
-else	
-	wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
 fi
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt update
