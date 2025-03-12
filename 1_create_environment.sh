@@ -1,16 +1,8 @@
 #!/bin/bash
 #
 
-IS_WSL="$(cat /proc/sys/fs/binfmt_misc/WSLInterop | grep enabled)"
-
-#Install NVIDIA Drivers if not WSL
-if ! [ $IS_WSL = "enabled" ]; then
-	printf %"s\n" "" "* Downloading and installing NVIDIA Drivers for Ubuntu 22.04 x86_64" ""
-	sudo apt-get update
-	sudo ubuntu-drivers install --gpgpu
-fi
-
 #Install CUDA Support
+IS_WSL="$(cat /proc/sys/fs/binfmt_misc/WSLInterop | grep enabled)"
 printf %"s\n" "" "* Downloading and installing CUDA for Ubuntu 22.04 x86_64" ""
 if [ $IS_WSL = "enabled" ]; then
 	wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb
