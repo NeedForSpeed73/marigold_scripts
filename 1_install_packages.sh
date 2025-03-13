@@ -3,7 +3,7 @@
 
 sudo apt update
 
-#Install CUDA Support for WSL
+# Install CUDA Support for WSL
 IS_WSL="$(cat /proc/sys/fs/binfmt_misc/WSLInterop | grep enabled)"
 printf %"s\n" "" "* Downloading and installing CUDA for Ubuntu WSL" ""
 if [ $IS_WSL = "enabled" ]; then
@@ -20,6 +20,12 @@ sudo apt install -y ffmpeg
 # Clean packagers
 printf %"s\n" "" "* Cleaning Up" ""
 sudo apt -y clean
+
+# Install gdrive
+printf %"s\n" "" "* Installing gdrive3 (https://github.com/glotlabs/gdrive/tree/main) " ""
+wget https://github.com/glotlabs/gdrive/releases/download/3.9.1/gdrive_linux-x64.tar.gz
+tar -xvzf gdrive_linux-x64.tar.gz
+rm gdrive_linux-x64.tar.gz
 
 printf %"s\n" "" "* Downloading Marigold (https://github.com/prs-eth/Marigold.git) and installing requirements-cuda" ""
 git clone https://github.com/prs-eth/Marigold.git
