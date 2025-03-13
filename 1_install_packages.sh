@@ -17,6 +17,10 @@ fi
 printf %"s\n" "" "* Installing FFMPEG" ""
 sudo apt install -y ffmpeg
 
+#Install SWAKS
+printf %"s\n" "" "* Installing SWAKS (https://www.jetmore.org/john/code/swaks/)" ""
+sudo apt install swaks
+
 # Clean packagers
 printf %"s\n" "" "* Cleaning Up" ""
 sudo apt -y clean
