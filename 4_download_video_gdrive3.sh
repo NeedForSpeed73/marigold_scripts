@@ -8,7 +8,7 @@ if [ "$#" -gt 0 ]; then
 else
 	printf %"s" "Account GDrive attivo: "
 	if ! $HOME/gdrive account list; then
-		$HOME/gdrive account add > /dev/null 2>&1
+		$HOME/gdrive account add
 	fi
 	read -p "Enter video file Google Drive Link: " VIDEO_LINK
 	VIDEO_ID="$(echo "$VIDEO_LINK" | awk -F"/" '{print $6}')"
