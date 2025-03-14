@@ -17,6 +17,7 @@ else
 fi
 
 # Remove spaces from filename
+cd Marigold/workspace
 for FILE in *.mp4
 do
 mv -- "$FILE" "${FILE//[[:space:]]/"_"}"
