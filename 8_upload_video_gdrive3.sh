@@ -7,7 +7,7 @@ FILE_FULL_PATH=$1
 FILE_NAME=${FILE_FULL_PATH##*/}
 
 if [ "$#" -ne 1 ]; then
-	printf %"s\n" "Usage: 7_upload_video_gdrive3.sh <video file>"
+	printf %"s\n" "Usage: 8_upload_video_gdrive3.sh <video file>"
 else
 	if ! [ -f $1 ]; then
 		printf %"s\n" "Errore: File $1 not found."

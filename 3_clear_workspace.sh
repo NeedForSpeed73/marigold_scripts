@@ -12,8 +12,3 @@ else
 	mkdir $DIR/input
 	mkdir $DIR/output
 fi
-
-# Banner Message
-printf %"s\n" "" "***************************************************************"
-printf %"s\n" "* Now copy video file, gdrive account and swaks passwork files in Marigold"
-printf %"s\n" "***************************************************************" ""

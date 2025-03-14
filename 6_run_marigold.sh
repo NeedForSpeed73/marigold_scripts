@@ -5,7 +5,7 @@ DIR=$HOME/Marigold/workspace
 SWAKS_PASS_ID=1volx10osLO2PCuC0Kx3J2rmMijwFTXAs
 
 if [ "$#" -gt 1 ]; then
-	printf %"s\n" "Usage: 5_run_marigold.sh <--fast>"
+	printf %"s\n" "Usage: 6_run_marigold.sh <--fast>"
 else
 	if [ $1 = "--fast" ]; then
 		echo "Using LCM (faster) setting."
@@ -24,6 +24,5 @@ fi
 
 PASSWORD="$(cat $HOME/Marigold/swaks.pass)"
 if swaks -t emilio.federici@gmail.com --from emiliofesocchi@gmail.com -s smtp.gmail.com:587 -tls -au emiliofesocchi@gmail.com -ap "$PASSWORD" --header "Subject: Marigold Computation Finished" > /dev/null 2>&1; then
-		rm $DIR/swaks.pass
 		printf %"s\n" "Email successfully sent."
 fi

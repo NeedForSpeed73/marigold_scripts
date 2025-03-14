@@ -5,7 +5,7 @@ DIR=$HOME/Marigold/workspace
 FPS_FILE=$DIR/fps.txt
 
 if [ "$#" -ne 1 ]; then
-	printf %"s\n" "Usage: 6_images2video.sh <video filename without '_depth.mp4'>"
+	printf %"s\n" "Usage: 7_images2video.sh <video filename without '_depth.mp4'>"
 else
 	if [ -f $FPS_FILE ]; then
 		FPS="$(cat $FPS_FILE)"
