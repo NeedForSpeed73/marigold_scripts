@@ -13,3 +13,9 @@ else
 		ffmpeg -i $1 -qmin 1 -qscale:v 1 $DIR/input/%06d.jpg
 	fi
 fi
+
+# Banner Message
+printf %"s\n" "*******************************************************************************************"
+printf %"s\n" "* To launch marigold computation in a detachable screen session:							 *"
+printf %"s\n" "* Now run 'screen -S marigold bash -c "sh ./marigold_scripts/6_run_marigold.sh [--fast]"' *"
+printf %"s\n" "*******************************************************************************************"

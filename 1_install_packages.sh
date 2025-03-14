@@ -42,8 +42,8 @@ bash Miniforge3.sh -b -p "${HOME}/Marigold/conda"
 rm Miniforge3.sh
 
 # Banner Message
-printf %"s\n" "" "***************************************************************"
-printf %"s\n" "* NOW EXECUTE 'source Marigold/conda/etc/profile.d/conda.sh'"
-printf %"s\n" "* NOW EXECUTE 'source Marigold/conda/etc/profile.d/mamba.sh'"
-printf %"s\n" "* NOW EXECUTE 'conda activate'"
-printf %"s\n" "***************************************************************" ""
+printf %"s\n" "**************************************************************"
+printf %"s\n" "* NOW EXECUTE 'source Marigold/conda/etc/profile.d/conda.sh' *"
+printf %"s\n" "* NOW EXECUTE 'source Marigold/conda/etc/profile.d/mamba.sh' *"
+printf %"s\n" "* NOW EXECUTE 'conda activate'								*"
+printf %"s\n" "**************************************************************"
