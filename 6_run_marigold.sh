@@ -12,8 +12,7 @@ else
 		python Marigold/run.py --input_rgb_dir $DIR/input --output_dir $DIR/output
 	else
 		echo "Using DDIM (paper) seting."
-		python Marigold/run.py --checkpoint prs-eth/marigold-v1-0 --denoise_steps 50 --ensemble_size 10 --input_rgb_dir $DIR/input/ 
-    --output_dir $DIR/output	
+		python Marigold/run.py --checkpoint prs-eth/marigold-v1-0 --denoise_steps 50 --ensemble_size 10 --input_rgb_dir $DIR/input/ --output_dir $DIR/output	
 	fi
 fi
 
