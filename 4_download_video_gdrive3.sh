@@ -19,5 +19,5 @@ fi
 # Remove spaces from filename
 for FILE in *.mp4
 do
-	mv -- "$FILE" "${FILE// /_}"
+mv -- "$FILE" "${FILE//[[:space:]]/"_"}"
 done
