@@ -15,3 +15,9 @@ else
  	VIDEO_ID="$(echo "$VIDEO_LINK" | awk -F"/" '{print $6}')"
  	$HOME/gdrive files download --destination $DIR --overwrite $VIDEO_ID
 fi
+
+# Remove spaces from filename
+for FILE in *.mp4
+do
+	mv -- "$FILE" "${FILE// /_}"
+done
