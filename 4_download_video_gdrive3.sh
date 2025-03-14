@@ -13,12 +13,10 @@ else
  
 	read -p "Enter video file Google Drive Link: " VIDEO_LINK
  	VIDEO_ID="$(echo "$VIDEO_LINK" | awk -F"/" '{print $6}')"
- 	$HOME/gdrive files download --destination $DIR --overwrite $VIDEO_ID
-fi
+	$HOME/gdrive files download --destination $DIR --overwrite $VIDEO_ID
 
-# Remove spaces from filename
-cd Marigold/workspace
-for FILE in *.mp4
-do
-mv -- "$FILE" "${FILE//[[:space:]]/"_"}"
-done
+	#Rimuovi Spazi dal nome del file
+	FILENAME="$($HOME/gdrive files info $VIDEO_ID | grep Name: | cut -c6- )"
+	NEW_FILENAME=${FILENAME//[[:space:]]/_}
+	mv "$DIR/$FILENAME" $DIR/$NEW_FILENAME
+fi
