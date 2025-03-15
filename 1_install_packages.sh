@@ -25,6 +25,8 @@ sudo apt install swaks
 printf %"s\n" "" "* Cleaning Up" ""
 sudo apt -y clean
 
+cd /mnt/fastdisk
+
 # Install gdrive
 printf %"s\n" "" "* Installing gdrive3 (https://github.com/glotlabs/gdrive/tree/main) " ""
 wget https://github.com/glotlabs/gdrive/releases/download/3.9.1/gdrive_linux-x64.tar.gz

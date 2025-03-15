@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-DIR=$HOME/Marigold/workspace
+DIR=/mnt/fastdisk/Marigold/workspace
 SWAKS_PASS_ID=1volx10osLO2PCuC0Kx3J2rmMijwFTXAs
 
 if [ "$#" -gt 1 ]; then

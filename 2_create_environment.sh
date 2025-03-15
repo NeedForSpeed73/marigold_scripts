@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-DIR=$HOME/Marigold
+DIR=/mnt/fastdisk/Marigold
 
 #Create Environment
 printf %"s\n" "" "* Creating Marigold environment" ""

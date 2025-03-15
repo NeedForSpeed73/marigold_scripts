@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-DIR=$HOME/Marigold/workspace
+DIR=/mnt/fastdisk/Marigold/workspace
 
 if [ "$#" -ne 1 ]; then
 	printf %"s\n" "Usage: 5_video2images.sh <video path>"

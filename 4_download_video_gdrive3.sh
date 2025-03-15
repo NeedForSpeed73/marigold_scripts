@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-DIR=$HOME/Marigold/workspace
+DIR=/mnt/fastdisk/Marigold/workspace
 
 if [ "$#" -gt 0 ]; then
 	printf %"s\n" "Usage: 4_download_video_gdrive3.sh"

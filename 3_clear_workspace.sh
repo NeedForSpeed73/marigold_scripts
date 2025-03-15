@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=$HOME/Marigold/workspace
+DIR=/mnt/fastdisk/Marigold/workspace
 
 if ! [ -d "$DIR" ]; then
 	printf %"s\n" "$DIR  does not exist."

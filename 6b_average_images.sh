@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-cd Marigold
+cd /mnt/fastdisk/Marigold
 
 if [ "$#" -gt 0 ]; then
         printf %"s\n" "Usage: 6b_average_images"

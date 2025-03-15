@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-DIR=$HOME/Marigold/workspace
+DIR=/mnt/fastdisk/Marigold/workspace
 FOLDER_ID=1V5vpLPnBsOlrodtas2o_KAvMiekzxkeU
 FILE_FULL_PATH=$1
 FILE_NAME=${FILE_FULL_PATH##*/}

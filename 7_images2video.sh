@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-DIR=$HOME/Marigold/workspace
+DIR=/mnt/fastdisk/Marigold/workspace
 FPS_FILE=$DIR/fps.txt
 
 if [ "$#" -ne 1 ]; then
