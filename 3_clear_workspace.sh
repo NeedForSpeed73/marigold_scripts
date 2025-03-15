@@ -1,6 +1,15 @@
 #!/bin/bash
+#
 
-DIR=/mnt/fastdisk/Marigold/workspace
+# Verify Platform
+PLATFORM="$(uname -n)"
+if [ $PLATFORM == "ubuntugpu" ]; then
+	BASE=/mnt/fastdisk
+else
+	BASE=$HOME
+fi
+
+DIR=$BASE/Marigold/workspace
 
 if ! [ -d "$DIR" ]; then
 	printf %"s\n" "$DIR  does not exist."
@@ -8,7 +17,8 @@ if ! [ -d "$DIR" ]; then
 	mkdir $DIR
 	mkdir $DIR/input
 	mkdir $DIR/output
+else
+	rm -r $DIR/input/*
+	rm -r $DIR/output/*
 fi
-rm -r $DIR/input/*
-rm -r $DIR/output/*
 printf %"s\n" "Done."

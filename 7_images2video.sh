@@ -1,7 +1,15 @@
 #!/bin/bash
 #
 
-DIR=/mnt/fastdisk/Marigold/workspace
+# Verify Platform
+PLATFORM="$(uname -n)"
+if [ $PLATFORM == "ubuntugpu" ]; then
+	BASE=/mnt/fastdisk
+else
+	BASE=$HOME
+fi
+
+DIR=$BASE/Marigold/workspace
 FPS_FILE=$DIR/fps.txt
 
 if [ "$#" -ne 1 ]; then
