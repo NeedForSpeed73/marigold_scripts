@@ -1,15 +1,6 @@
 #!/bin/bash
 #
 
-# Verify Platform
-PLATFORM="$(uname -n)"
-if [ $PLATFORM = "ubuntugpu" ]; then
-	BASE=/mnt/fastdisk
-	sudo chown usergpu.usergpu /mnt/fastdisk
-else
-	BASE=$HOME
-fi
-
 sudo apt update
 
 # Install CUDA Support for WSL
@@ -48,7 +39,7 @@ git clone https://github.com/prs-eth/Marigold.git
 # Install Miniforge3
 printf %"s\n" "" "* Downloading and installing Miniforge-3-$(uname)-$(uname -m).sh"
 wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
-bash Miniforge3.sh -b -p "$BASE/Marigold/conda"
+bash Miniforge3.sh -b -p "$HOME/conda"
 rm Miniforge3.sh
 
 # Banner Message

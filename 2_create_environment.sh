@@ -1,14 +1,6 @@
 #!/bin/bash
 #
 
-# Verify Platform
-PLATFORM="$(uname -n)"
-if [ $PLATFORM = "ubuntugpu" ]; then
-	BASE=/mnt/fastdisk
-else
-	BASE=$HOME
-fi
-
 DIR=$HOME/Marigold
 
 #Create Environment
