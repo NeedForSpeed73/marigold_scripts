@@ -9,6 +9,6 @@ if ! [ -d "$DIR" ]; then
 	mkdir $DIR/input
 	mkdir $DIR/output
 fi
-rm -r $DIR/input
-rm -r $DIR/output
+rm -r $DIR/input/*
+rm -r $DIR/output/*
 printf %"s\n" "Done."

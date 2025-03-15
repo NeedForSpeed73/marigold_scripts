@@ -16,7 +16,7 @@ else
 	$HOME/gdrive files download --destination $DIR --overwrite $VIDEO_ID
 
 	#Rimuovi Spazi dal nome del file
-	FILENAME="$($HOME/gdrive files info $VIDEO_ID | grep Name: | cut -c6- )"
-	NEW_FILENAME=${FILENAME//[[:space:]]/_}
+	FILENAME="$($HOME/gdrive files info $VIDEO_ID | grep Name: | cut -c7- )"
+	NEW_FILENAME="$(echo $FILENAME | tr -s ' ' '_')"
 	mv "$DIR/$FILENAME" $DIR/$NEW_FILENAME
 fi
