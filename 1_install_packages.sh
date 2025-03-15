@@ -40,7 +40,7 @@ cd Marigold
 # Install Miniforge3
 printf %"s\n" "" "* Downloading and installing Miniforge-3-$(uname)-$(uname -m).sh"
 wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
-bash Miniforge3.sh -b -p "${HOME}/Marigold/conda"
+bash Miniforge3.sh -b -p "/mnt/fastdisk/Marigold/conda"
 rm Miniforge3.sh
 
 # Banner Message
