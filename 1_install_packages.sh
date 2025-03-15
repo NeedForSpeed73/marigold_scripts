@@ -3,7 +3,7 @@
 
 # Verify Platform
 PLATFORM="$(uname -n)"
-if [ $PLATFORM == "ubuntugpu" ]; then
+if [ $PLATFORM = "ubuntugpu" ]; then
 	BASE=/mnt/fastdisk
 else
 	BASE=$HOME
