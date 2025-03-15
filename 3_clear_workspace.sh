@@ -3,13 +3,13 @@
 
 # Verify Platform
 PLATFORM="$(uname -n)"
-if [ $PLATFORM == "ubuntugpu" ]; then
+if [ $PLATFORM = "ubuntugpu" ]; then
 	BASE=/mnt/fastdisk
 else
 	BASE=$HOME
 fi
 
-DIR=$BASE/Marigold/workspace
+DIR=$BASE/workspace
 
 if ! [ -d "$DIR" ]; then
 	printf %"s\n" "$DIR  does not exist."
