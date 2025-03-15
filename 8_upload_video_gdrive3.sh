@@ -3,13 +3,13 @@
 
 # Verify Platform
 PLATFORM="$(uname -n)"
-if [ $PLATFORM == "ubuntugpu" ]; then
+if [ $PLATFORM = "ubuntugpu" ]; then
 	BASE=/mnt/fastdisk
 else
 	BASE=$HOME
 fi
 
-DIR=$BASE/Marigold/workspace
+DIR=$BASE/workspace
 FOLDER_ID=1V5vpLPnBsOlrodtas2o_KAvMiekzxkeU
 FILE_FULL_PATH=$1
 FILE_NAME=${FILE_FULL_PATH##*/}
@@ -21,15 +21,15 @@ else
 		printf %"s\n" "Errore: File $1 not found."
 	else
 		printf %"s" "Account GDrive attivo: "
-		if ! $BASEgdrive account list; then
-			$BASE/gdrive account import $HOME/Marigold/gdrive_export-emiliofesocchi_gmail_com.tar
+		if ! $HOME/gdrive account list; then
+			$HOME/gdrive account import $HOME/gdrive_export-emiliofesocchi_gmail_com.tar
 		fi
-		IS_PRESENT="$($BASE/gdrive files list --parent $FOLDER_ID | awk -F ' ' '{print $2}' | grep $FILE_NAME)"
+		IS_PRESENT="$($HOME/gdrive files list --parent $FOLDER_ID | awk -F ' ' '{print $2}' | grep $FILE_NAME)"
 		if [ ! -z "$IS_PRESENT" ]; then
-			FILE_ID="$($BASE/gdrive files list --parent $FOLDER_ID | grep $FILE_NAME | awk -F ' ' '{print $1}')"
-			$BASE/gdrive files update $FILE_ID $1
+			FILE_ID="$($HOME/gdrive files list --parent $FOLDER_ID | grep $FILE_NAME | awk -F ' ' '{print $1}')"
+			$HOME/gdrive files update $FILE_ID $1
 		else
-			$BASE/gdrive files upload --parent $FOLDER_ID $1	
+			$HOME/gdrive files upload --parent $FOLDER_ID $1	
 		fi
 	fi
 fi

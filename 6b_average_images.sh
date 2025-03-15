@@ -3,18 +3,17 @@
 
 # Verify Platform
 PLATFORM="$(uname -n)"
-if [ $PLATFORM == "ubuntugpu" ]; then
+if [ $PLATFORM = "ubuntugpu" ]; then
         BASE=/mnt/fastdisk
 else
         BASE=$HOME
 fi
 
-cd $BASE/Marigold
+cd $BASE
 
 if [ "$#" -gt 0 ]; then
         printf %"s\n" "Usage: 6b_average_images"
 else
-        cd Marigold
         python3 - << END
 import os
 import glob

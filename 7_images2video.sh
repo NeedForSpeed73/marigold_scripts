@@ -3,13 +3,13 @@
 
 # Verify Platform
 PLATFORM="$(uname -n)"
-if [ $PLATFORM == "ubuntugpu" ]; then
+if [ $PLATFORM = "ubuntugpu" ]; then
 	BASE=/mnt/fastdisk
 else
 	BASE=$HOME
 fi
 
-DIR=$BASE/Marigold/workspace
+DIR=$BASE/workspace
 FPS_FILE=$DIR/fps.txt
 
 if [ "$#" -ne 1 ]; then

@@ -3,13 +3,13 @@
 
 # Verify Platform
 PLATFORM="$(uname -n)"
-if [ $PLATFORM == "ubuntugpu" ]; then
+if [ $PLATFORM = "ubuntugpu" ]; then
 	BASE=/mnt/fastdisk
 else
 	BASE=$HOME
 fi
 
-DIR=$BASE/Marigold/workspace
+DIR=$BASE/workspace
 
 if [ "$#" -ne 1 ]; then
 	printf %"s\n" "Usage: 5_video2images.sh <video path>"
