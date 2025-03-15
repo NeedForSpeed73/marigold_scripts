@@ -1,12 +1,20 @@
 #!/bin/bash
 #
 
-DIR=$HOME/Marigold
+# Verify Platform
+PLATFORM="$(uname -n)"
+if [ $PLATFORM == "ubuntugpu" ]; then
+	BASE=/mnt/fastdisk
+else
+	BASE=$HOME
+fi
+
+DIR=$BASE/Marigold
 
 #Create Environment
 printf %"s\n" "" "* Creating Marigold environment" ""
 
-cd Marigold
+cd $BASE/Marigold
 mamba env create -n marigold --file environment.yaml
 
 # Banner Message

@@ -1,7 +1,15 @@
 #!/bin/bash
 #
 
-DIR=$HOME/Marigold/workspace
+# Verify Platform
+PLATFORM="$(uname -n)"
+if [ $PLATFORM == "ubuntugpu" ]; then
+	BASE=/mnt/fastdisk
+else
+	BASE=$HOME
+fi
+
+DIR=$BASE/Marigold/workspace
 SWAKS_PASS_ID=1volx10osLO2PCuC0Kx3J2rmMijwFTXAs
 
 if [ "$#" -gt 1 ]; then

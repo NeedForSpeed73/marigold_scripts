@@ -1,6 +1,14 @@
 #!/bin/bash
 #
 
+# Verify Platform
+PLATFORM="$(uname -n)"
+if [ $PLATFORM == "ubuntugpu" ]; then
+	BASE=/mnt/fastdisk
+else
+	BASE=$HOME
+fi
+
 sudo apt update
 
 # Install CUDA Support for WSL
@@ -25,6 +33,8 @@ sudo apt install swaks
 printf %"s\n" "" "* Cleaning Up" ""
 sudo apt -y clean
 
+cd $BASE
+
 # Install gdrive
 printf %"s\n" "" "* Installing gdrive3 (https://github.com/glotlabs/gdrive/tree/main) " ""
 wget https://github.com/glotlabs/gdrive/releases/download/3.9.1/gdrive_linux-x64.tar.gz
@@ -38,7 +48,7 @@ cd Marigold
 # Install Miniforge3
 printf %"s\n" "" "* Downloading and installing Miniforge-3-$(uname)-$(uname -m).sh"
 wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
-bash Miniforge3.sh -b -p "${HOME}/Marigold/conda"
+bash Miniforge3.sh -b -p "$BASE/Marigold/conda"
 rm Miniforge3.sh
 
 # Banner Message
